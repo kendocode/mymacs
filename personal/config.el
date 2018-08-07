@@ -59,7 +59,7 @@
 (add-hook 'after-init-hook 'inf-ruby-switch-setup) ; allows use of binding.pry
 
 ;; robe
-(require 'robe) -- use for code completion, projectile rails for navigation
+(require 'robe) ;use for code completion, projectile rails for navigation
 (add-hook 'ruby-mode-hook 'robe-mode)
 (global-company-mode t) ; allow intelligent code-completion
 (push 'company-robe company-backends)
