@@ -1,8 +1,38 @@
-;;My mods to prelude settings
+;;My mods
 
-;; required packages
-(prelude-require-packages
- '(elpa-mirror ag xref-js2 js2-refactor robe markdown-mode csv-mode neotree yasnippet-snippets multi-term  key-chord yaml-mode web-mode geiser yari inf-ruby json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode company helm-ag helm-descbinds helm-projectile helm smex ido-completing-read+ flx-ido solarized-theme))
+;;;; prelude specific settings
+
+;; I set my theme (usually solarized-dark) in /personal/preload
+(disable-theme 'zenburn)
+
+;; don't need reminders not to use arrows or disabling deletes
+(setq prelude-guru nil) ;;has become ineffective -- guru mode still runs
+(setq guru-mode nil) ;;this kills it
+;; don't usually need to see whitespace; toggle on when I do
+(setq prelude-whitespace nil)
+
+;;change key-chord to multichar jump instead of just one or two chrs
+(key-chord-define-global "jj" 'avy-goto-char-timer)
+
+
+;; general settings and config
+(setq select-enable-clipboard t)
+(setq select-enable-primary nil)
+(setq-default cursor-type 'bar)
+;; Q:what the hell does it take to get rid of scroll bars by default?????
+;; yipee!! finally found by doing helm-locate-library, found scroll-bar.el.gz
+;; where this is defined at line 110. Can be set nil, left, or right.
+(set-scroll-bar-mode nil)
+
+;; set my elpa mirror local repo to save good copies of all installed packages
+(setq elpamr-default-output-directory "~/.dotfiles/emacs/personal/my_elpa")
+
+;; global keys
+(global-set-key [f8] 'neotree-toggle)
+;; (define-key global-map "\C-cc" 'org-capture)
+(global-set-key [f9] 'view-buffer-other-frame)
+(global-set-key [f5] 'yas-insert-snippet)
+
 
 ;; store backups in designated folder
 (setq backup-directory-alist `((".*" . "~/.emacs.d/.backups")))
@@ -19,42 +49,20 @@
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
 
-;; ;;change key-chord to multichar jump instead of just one or two chrs
-(key-chord-define-global "jj" 'avy-goto-char-timer)
-
-;;I set my theme (usually solarized-dark) in /personal/preload
-(disable-theme 'zenburn)
-
-;;don't need reminders not to use arrows or disabling deletes
-(setq prelude-guru nil) ;;has become ineffective -- guru mode still runs
-(setq guru-mode nil) ;;this kills it
-
-;; ;;don't usually need to see whitespace; toggle on when I do
-(setq prelude-whitespace nil)
-
-;; set my elpa mirror local repo to save good copies of all installed packages
-(setq elpamr-default-output-directory "~/.dotfiles/emacs/personal/my_elpa")
-
-;; general settings and config
-(setq select-enable-clipboard t)
-(setq select-enable-primary nil)
-(setq-default cursor-type 'bar)
-;; Q:what the hell does it take to get rid of scroll bars by default?????
-;; yipee!! finally found by doing helm-locate-library, found scroll-bar.el.gz
-;; where this is defined at line 110. Can be set nil, left, or right.
-(set-scroll-bar-mode nil)
-
-;;my global keys
-(global-set-key [f8] 'neotree-toggle)
-;; (define-key global-map "\C-cc" 'org-capture)
-(global-set-key [f9] 'view-buffer-other-frame)
-(global-set-key [f5] 'yas-insert-snippet)
-
 
 ;;;; mode configs
 
 ;; projectile rails 
 (projectile-rails-global-mode)
+;; adjustments to make pry play well with projectile-rails debugging
+;; also necessary to modify pryrc to disable paging and turn off indent correction
+(add-hook 'after-init-hook 'inf-ruby-switch-setup) ; allows use of binding.pry
+
+;; robe
+(require 'robe) -- use for code completion, projectile rails for navigation
+(add-hook 'ruby-mode-hook 'robe-mode)
+(global-company-mode t) ; allow intelligent code-completion
+(push 'company-robe company-backends)
 
 ;; javascript
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
