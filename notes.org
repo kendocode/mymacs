@@ -1,0 +1,31 @@
+* General Notes
+  The bulk of my emacs config currently comes from Prelude; I keep the repo as a submodule in lib/prelude.
+  Then I symlink in what I use from Prelude along with my personal config in home/emacs to ~/.emacs.d
+
+** Clean Install Procedures
+
+  After starting emacs for the first time:
+    1. find ken-packages, M-x eval-buffer #it'll do a bunch of installing
+    2. find init.el (prelude's), M-x eval-buffer #installs theme and calls my persona config.
+    TODO: Maybe script that?
+
+  Don't symlink lib/my_elpa -- emacs will create elpa in .emacs.d anyhow if it doesn't exist.
+  The git submodule lib/my_elpa is a backup repo I keep at github in case something breaks and I need a known good 
+  version of a package.
+
+* Package Notes
+
+** elpa-mirror (my_elpa repo)
+  5 JAN 17 -- installed https://github.com/redguardtoo/elpa-mirror to keep a backup mirror of all
+installed packages for reversion if (when) updates break something.
+To create a local repository of current packages: M-x elpamr-create-mirror-for-installed
+
+To use the my_elpa repository, insert appropriate code
+# to set my_elpa local repo as the ONLY repository
+#(setq package-archives '(("myelpa" . "PATH_TO_MYELPA")))
+# add-to-list does not override existing melpa or other archive settings
+# but adds remote repo as a package source to check
+#(add-to-list 'package-archives
+             '("myelpa" . "https://raw.githubusercontent.com/kendocode/my_elpa/master/"))
+
+
