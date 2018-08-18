@@ -32,6 +32,13 @@
 ;; (define-key global-map "\C-cc" 'org-capture)
 (global-set-key [f9] 'view-buffer-other-frame)
 (global-set-key [f5] 'yas-insert-snippet)
+(global-set-key (kbd "C-\"") 'insert-pair) ;; wrap region in ""
+(global-set-key (kbd "C-'") 'insert-pair) ;; wrap region in ''
+;; note prefix C-u with change-* means copy vs kill
+(global-set-key (kbd "M-s-i") 'change-inner) ;; kill everything in delimiter
+(global-set-key (kbd "M-s-o") 'change-outer) ;; kill everything up to and including delimiter
+
+;; TODO work on my function wrap-region to take argument
 
 
 ;; store backups in designated folder
@@ -48,7 +55,6 @@
       auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
-
 
 ;;;; mode configs
 
@@ -98,6 +104,16 @@
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
 (require 'saveplace)
+
+;;;;;;;;;;;;;;;; My functions ;;;;;;;;;;;;;;;
+(defun wrap-region ()
+  (interactive)
+  (if (region-active-p)
+      (insert-pair 1 ?{ ?})
+    (insert "{}")
+    (backward-char)))
+
+
 
 ;;;;;;;;;;;;;;;;;;; Useful Functions With Thanks to Ross Andrews ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun zorch-line ()
