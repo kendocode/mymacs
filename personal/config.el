@@ -37,6 +37,8 @@
 ;; note prefix C-u with change-* means copy vs kill
 (global-set-key (kbd "M-s-i") 'change-inner) ;; kill everything in delimiter
 (global-set-key (kbd "M-s-o") 'change-outer) ;; kill everything up to and including delimiter
+(global-set-key (kbd "M-s-<up>") 'roll-line-up)
+(global-set-key (kbd "M-s-<down>") 'roll-line-down)
 
 ;; TODO work on my function wrap-region to take argument
 
