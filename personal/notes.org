@@ -1,0 +1,4 @@
+Prelude File Loading order: personal/preload/ -> core/ -> prelude-modules.el -> personal/
+In personal/preload/ loading phase, no access to prelude packages.
+
+

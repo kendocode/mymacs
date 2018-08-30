@@ -1,27 +1,12 @@
 ;;My mods
 
-;;;; prelude specific settings
-
-;; I set my theme (usually solarized-dark) in /personal/preload
-(disable-theme 'zenburn)
-
-;; don't need reminders not to use arrows or disabling deletes
-(setq prelude-guru nil) ;;has become ineffective -- guru mode still runs
-(setq guru-mode nil) ;;this kills it
-;; don't usually need to see whitespace; toggle on when I do
-(setq prelude-whitespace nil)
-
-;;change key-chord to multichar jump instead of just one or two chrs
-(key-chord-define-global "jj" 'avy-goto-char-timer)
+;;;; prelude settings
 
 
 ;; general settings and config
 (setq select-enable-clipboard t)
 (setq select-enable-primary nil)
 (setq-default cursor-type 'bar)
-;; Q:what the hell does it take to get rid of scroll bars by default?????
-;; yipee!! finally found by doing helm-locate-library, found scroll-bar.el.gz
-;; where this is defined at line 110. Can be set nil, left, or right.
 (set-scroll-bar-mode nil)
 
 ;; set my elpa mirror local repo to save good copies of all installed packages
@@ -29,12 +14,11 @@
 
 ;; global keys
 (global-set-key [f8] 'neotree-toggle)
-;; (define-key global-map "\C-cc" 'org-capture)
 (global-set-key [f9] 'view-buffer-other-frame)
 (global-set-key [f5] 'yas-insert-snippet)
 (global-set-key (kbd "C-\"") 'insert-pair) ;; wrap region in ""
 (global-set-key (kbd "C-'") 'insert-pair) ;; wrap region in ''
-;; note prefix C-u with change-* means copy vs kill
+;; note using prefix C-u with change-* means copy vs kill
 (global-set-key (kbd "M-s-i") 'change-inner) ;; kill everything in delimiter
 (global-set-key (kbd "M-s-o") 'change-outer) ;; kill everything up to and including delimiter
 (global-set-key (kbd "M-s-<up>") 'roll-line-up)
@@ -60,26 +44,7 @@
 
 ;;;; mode configs
 
-;; projectile rails 
-(projectile-rails-global-mode)
-;; adjustments to make pry play well with projectile-rails debugging
-;; also necessary to modify pryrc to disable paging and turn off indent correction
-(add-hook 'after-init-hook 'inf-ruby-switch-setup) ; allows use of binding.pry
 
-;; robe
-(require 'robe) ;use for code completion, projectile rails for navigation
-(add-hook 'ruby-mode-hook 'robe-mode)
-(global-company-mode t) ; allow intelligent code-completion
-(push 'company-robe company-backends)
-
-;; javascript
-(add-hook 'js2-mode-hook #'js2-refactor-mode)
-(js2r-add-keybindings-with-prefix "C-c C-r")
-(define-key js2-mode-map (kbd "C-k") #'js2r-kill)
-(define-key js-mode-map (kbd "M-.") nil) ;;js-mode binding conflicts with xref
-(add-hook 'js2-mode-hook (lambda ()
-                           (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
-                           (setq js2-basic-offset 2)))
 
 ;; set multi-term and helm-mt to use my zsh
 (setq multi-term-program "/usr/bin/zsh")
