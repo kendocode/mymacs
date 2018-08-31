@@ -7,4 +7,3 @@
 (setq prelude-whitespace nil)
 ;;change key-chord to multichar jump instead of just one or two chrs
 (key-chord-define-global "jj" 'avy-goto-char-timer)
-

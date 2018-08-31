@@ -1,4 +1,21 @@
-Prelude File Loading order: personal/preload/ -> core/ -> prelude-modules.el -> personal/
+Prelude File Loading order: personal/preload/ (in alpha order) -> core/ -> prelude-modules.el -> personal/(alpha order)
+
 In personal/preload/ loading phase, no access to prelude packages.
+
+* Installing Org
+
+** Use Latest version from org's archive
+   made load-org.el file in personal/preload to add org's archive to archive list. Evaled buffer,
+then was able to install org-plus-contrib via M-x package install.
+
+** Add my config on top of Prelude's
+   Copied the basic prelude org config into mine so I remember what's used. Now I can require org
+from prelude-modules.el, and everything should work.  [[https://orgmode.org/elpa.html][Org site]] suggests initializing packages early
+in emacs init and only installing before any org files are visited etc, but reading prelude package
+loading code it looks to be acceptable as is.
+
+
+
+
 
 

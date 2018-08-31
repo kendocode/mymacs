@@ -10,7 +10,7 @@
     TODO: Maybe script that?
 
   Don't symlink lib/my_elpa -- emacs will create elpa in .emacs.d anyhow if it doesn't exist.
-  The git submodule lib/my_elpa is a backup repo I keep at github in case something breaks and I need a known good 
+  The git submodule lib/my_elpa is a backup repo I keep at github in case something breaks and I need a known good
   version of a package.
 
 * Package Notes
@@ -27,5 +27,3 @@ To use the my_elpa repository, insert appropriate code
 # but adds remote repo as a package source to check
 #(add-to-list 'package-archives
              '("myelpa" . "https://raw.githubusercontent.com/kendocode/my_elpa/master/"))
-
-

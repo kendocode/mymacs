@@ -1,8 +1,3 @@
-;;My mods
-
-;;;; prelude settings
-
-
 ;; general settings and config
 (setq select-enable-clipboard t)
 (setq select-enable-primary nil)
@@ -10,7 +5,7 @@
 (set-scroll-bar-mode nil)
 
 ;; set my elpa mirror local repo to save good copies of all installed packages
-(setq elpamr-default-output-directory "~/.dotfiles/emacs/personal/my_elpa")
+(setq elpamr-default-output-directory "~/.kendotfiles/emacs/mymacs/personal/my_elpa")
 
 ;; global keys
 (global-set-key [f8] 'neotree-toggle)
@@ -42,10 +37,6 @@
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
 
-;;;; mode configs
-
-
-
 ;; set multi-term and helm-mt to use my zsh
 (setq multi-term-program "/usr/bin/zsh")
 ;;disable yasnippets in terminal buffers to allow zsh tab completion
@@ -64,8 +55,6 @@
 
 ;; regex builder -- set to string not read
 (setq reb-re-syntax 'string)
-
-;; Useful Functions
 
 ;; Save cursor position when reopening a file -- Thanks to Mike McFarland
 (setq save-place-file "~/.emacs.d/saveplace")
