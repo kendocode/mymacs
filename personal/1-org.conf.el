@@ -28,20 +28,36 @@
 
 (add-to-list 'auto-mode-alist '("\\.org.txt" . org-mode))
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(setq org-yank-adjusted-subtrees t)
+(setq org-footnote-auto-adjust t)
+
+;; Current gtd setup based on https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
 
 ;; Agenda
 (setq org-agenda-files (quote ("~/Dropbox/orgzly/inbox.org.txt"
-                               "~/Dropbox/orgzly/gtd.org"
-                               "~/Dropbox/orgzly/tickler.org")))
+                               "~/Dropbox/orgzly/projects.org.txt"
+                               "~/Dropbox/orgzly/tickler.org.txt"
+                               "~/Dropbox/orgzly/todo.org.txt")))
 
 ;;; captures
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                               (file+headline "~Dropbox/orgzly/inbox.org" "Inbox")
+                               (file+headline "~Dropbox/orgzly/inbox.org.txt" "Inbox")
                                "* TODO %i%?")
                               ("T" "Tickler" entry
-                               (file+headline "~/Dropbox/orgzly/tickler.org" "Tickler")
+                               (file+headline "~/Dropbox/orgzly/tickler.org.txt" "Tickler")
                                "* %i%? \n %U")
                               ("j" "Journal" entry
                                (file+olp+datetree "~/data/documents/journal.org")
                                "* %?\Entered on %U\n %i\n %a")))
+
+;; refile targets
+(setq org-refile-targets '(("~/Dropbox/orgzly/projects.org.txt" :maxlevel . 3)
+                           ("~/data/documents/someday.org" :level . 1)
+                           ("~/Dropbox/orgzly/tickler.org.txt" :maxlevel . 2)))
+(setq org-refile-allow-creating-parent-nodes t)
+
+;; todo setup
+(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
+;;  LocalWords:  orgzly
