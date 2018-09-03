@@ -9,13 +9,51 @@ In personal/preload/ loading phase, no access to prelude packages.
 then was able to install org-plus-contrib via M-x package install.
 
 ** Add my config on top of Prelude's
-   Copied the basic prelude org config into mine so I remember what's used. Now I can require org
+- Copied the basic prelude org config into mine so I remember what's used. Now I can require org
 from prelude-modules.el, and everything should work.  [[https://orgmode.org/elpa.html][Org site]] suggests initializing packages early
 in emacs init and only installing before any org files are visited etc, but reading prelude package
 loading code it looks to be acceptable as is.
+- Also added ~prelude-pinned-packages.el~ file with org-plus-contrib from org's elpa archive
+
+* Getting later version of emacs
+- installed emacs lisp ppa
+- installed emacs-snapshot
+- set alias ~emacs=emacs-snapshot~
+- removed emacs from apt
+- changed omzsh alias and emacs plugins to use emacs-snapshot
+- put ~emacs-snapshot --daemon~ in gnome's auto-start
+- found that several org-contrib files were shadowing the built-in org. Since it was only about 6 minor
+releases behing snapshot, considered just using built-in, but decided I wanted the contrib stuff too
+- Removed ~/usr/share/emacs/27?/org~
+- Killed daemon, restarted, only shadowing is ispell dictionaries in site-lisp vs lisp/site-lisp.
+Decided I can live with that for now.
+- Fired up daemon, all good.
+* Issues
+** Invalid target when trying to refile from inbox.org.txt
+*** Maybe File permissions?
+  - Found that inbox and todo didn't have write permissions; changed to 660. No help
+  - Tried changing agenda from file list to ~/Dropbox/orgzly/~, and setting ~org-refile-allow-creating-parent-hooks~ to ~'confirm~. -- No help
+  - Am able to refile if I pick an existing item to file under
+  - Added back the individual agenda files instead of wheole directory/
+  - Removed references to inbox in Todo refile stanza
+*** How fixed
+**** Pieces of the puzzle
+  - Several things have to be set to have refiles working as I wanted. [[https://blog.aaronbieber.com/2017/03/19/organizing-notes-with-refile.html][This blog post]] was the only one I found that had all the elements as I wanted.
+  - Set ~org-refile-targets~ to a list of files or a symbol of a variable representing such. Once set, when you issue ~C-c C-w~ you get a completion list matching the targets at the level specified.
+  - This will only allow refiling to existing nodes. If you want to be able to _create_ new node and refile to them:
+    - Set ~org-refile-use-outline-path~ to ~'file~ (if you want to go by files)
+    - Set ~org-outline-path-complete-in-steps~ to ~nil~ (if using Helm for completion, since you do your narrowing inside helm mini-buffer)
+    - Set ~org-outline-allow-creating-parent-nodes~ to ~'confirm~ (if you want the added check of confirming when creating a new heading in a file)
+  - With these settings, you issue ~C-c C-w~ to refile.
+    - This brings up the Helm completion menu for all existing targets meeting your set criteria
+    - If you're refiling to existing node, type until you match it and issue ~RET~
+    - If you want to _create_ a new heading, type the path and add ~/New Heading Name~ to the end
+      - Confirm that you want to create that heading 
 
 
-
-
-
-
+* Syncthing
+** Using Termux for phone 
+   - ~pkg install -y syncthing~ installed the package
+   - ~syncthing~ launched the web gui
+** On Laptop
+   - 
