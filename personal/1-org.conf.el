@@ -36,25 +36,25 @@
 ;; Current gtd setup based on https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
 
 ;; agenda
-(setq org-agenda-files (quote ("~/Dropbox/orgzly")))
+(setq org-agenda-files (quote ("~/Sync/orgzly")))
 (setq org-agenda-file-regexp "\.org\.?")
 
 ;;; captures
 (global-set-key "\C-cc" 'org-capture)
 (setq org-capture-templates '(("t" "Todo" entry
-                               (file+headline "~Dropbox/orgzly/inbox.org.txt" "Todo")x
+                               (file+headline "~Sync/orgzly/inbox.org.txt" "Todo")x
                                "* TODO %i%?")
                               ("T" "Tickler" entry
-                               (file+headline "~/Dropbox/orgzly/tickler.org.txt" "Tickler")
+                               (file+headline "~/Sync/orgzly/tickler.org.txt" "Tickler")
                                "* %i%? \n %U")
                               ("j" "Journal" entry
                                (file+olp+datetree "~/data/documents/journal.org")
                                "* %?\Entered on %U\n %i\n %a")))
 
 ;; refile targets
-;; (setq org-refile-targets '(("~/Dropbox/orgzly/projects.org.txt" :maxlevel . 2)
+;; (setq org-refile-targets '(("~/Sync/orgzly/projects.org.txt" :maxlevel . 2)
 ;;                            ("~/data/documents/someday.org" :level . 1)
-;;                            ("~/Dropbox/orgzly/tickler.org.txt" :level . 1)))
+;;                            ("~/Sync/orgzly/tickler.org.txt" :level . 1)))
 (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
