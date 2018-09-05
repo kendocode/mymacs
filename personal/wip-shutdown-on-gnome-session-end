@@ -1,4 +1,5 @@
-;;; save & shutdown when we get an "end of session" signal on dbus 
+;;; save & shutdown when we get an "end of session" signal on dbus
+;; getting error on start -- no session
 (require 'dbus)
 
 (defun my-register-signals (client-path)
