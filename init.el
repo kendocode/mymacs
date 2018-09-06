@@ -1,4 +1,4 @@
-;;; init.el --- Prelude's configuration entry point.
+;; init.el --- Prelude's configuration entry point.
 ;;
 ;; Copyright (c) 2011-2018 Bozhidar Batsov
 ;;
@@ -37,7 +37,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-;(package-initialize)
+;; (package-initialize) ;; No longer needed, called automatically in v > 26.0
 
 (defvar current-user
   (getenv

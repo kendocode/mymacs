@@ -5,7 +5,7 @@
 (set-scroll-bar-mode nil)
 
 ;; set my elpa mirror local repo to save good copies of all installed packages
-(setq elpamr-default-output-directory "~/.kendotfiles/emacs/mymacs/personal/my_elpa")
+(setq elpamr-default-output-directory "~/.emacs.d/personal/my-elpa")
 
 ;; global keys
 (global-set-key [f8] 'neotree-toggle)
