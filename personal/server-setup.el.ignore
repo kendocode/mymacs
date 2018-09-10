@@ -1,0 +1,20 @@
+
+;; Try again later --can start remote server on right socket and
+;; sent client there with right file using
+;; ssh -R (or -L) addr:5555:host:5555 (vice-versa if -R, need to figure that out)
+;; then emacsclient --server-file "~/sync-org/pixelmacs"
+;; but get bad authorization
+;; When start emacs --daemon on pixel, it does create the "pixelmacs" file
+;; in ~/sync-org/server, but on p71 it isn't doing so. Need to figure that out too.
+
+
+; (setq server-name "pixelmacs")
+; (setq server-use-tcp t)
+; (setq server-auth-key
+;       (with-temp-buffer
+; 	(insert-file-contents "~/sync-org/auth")
+; 	(buffer-string)))
+; (setq server-host "0.0.0.0")
+; (setq server-port "5555")
+; (setq server-auth-dir "~/data/sync-org")
+; (server-start)
