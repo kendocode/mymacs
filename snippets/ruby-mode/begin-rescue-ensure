@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: begin-rescue-ensure
+# key: beg
+# contributor: kendocode
+# --
+
+begin
+$>$1
+rescue
+$>$2
+ensure
+$>$0
+end

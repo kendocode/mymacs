@@ -1,8 +1,14 @@
+;; add asdf to path until figure out how to make emacs pick up full env
+;;(setenv "PATH" (concat (getenv"PATH") ":/home/ken/.asdf/bin:/home/ken/.asdf/shims"))
+;; solution = start emacs server from shell after logged in, not as service
+
 ;; general settings and config
 (setq select-enable-clipboard t)
 (setq select-enable-primary nil)
 (setq-default cursor-type 'bar)
 (set-scroll-bar-mode nil)
+;; update buffers when files change on disk (e.g. git checkout)
+(global-auto-revert-mode t)
 
 ;; set my elpa mirror local repo to save good copies of all installed packages
 (setq elpamr-default-output-directory "~/.kendotfiles/emacs/mymacs/personal/my_elpa")
@@ -50,8 +56,9 @@
 (add-hook 'web-mode-hook 'personal-web-mode-hooks)
 
 ;; yasnippets
-;;(yas-global-mode 1)
+(yas-global-mode 1)
 (setq yas-buffer-local-condition 'always) ;; allow expansion in strings and comments
+(define-key yas-minor-mode (kbd "C-<tab>") nil)
 
 ;; regex builder -- set to string not read
 (setq reb-re-syntax 'string)
@@ -68,6 +75,30 @@
       (insert-pair 1 ?{ ?})
     (insert "{}")
     (backward-char)))
+
+;;; from https://emacs.stackexchange.com/questions/24459/revert-all-open-buffers-and-ignore-errors
+(defun revert-all-file-buffers ()
+  "Refresh all open file buffers without confirmation.
+Buffers in modified (not yet saved) state in emacs will not be reverted. They
+will be reverted though if they were modified outside emacs.
+Buffers visiting files which do not exist any more or are no longer readable
+will be killed."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (let ((filename (buffer-file-name buf)))
+      ;; Revert only buffers containing files, which are not modified;
+      ;; do not try to revert non-file buffers like *Messages*.
+      (when (and filename
+                 (not (buffer-modified-p buf)))
+        (if (file-readable-p filename)
+            ;; If the file exists and is readable, revert the buffer.
+            (with-current-buffer buf
+              (revert-buffer :ignore-auto :noconfirm :preserve-modes))
+          ;; Otherwise, kill the buffer.
+          (let (kill-buffer-query-functions) ; No query done when killing buffer
+            (kill-buffer buf)
+            (message "Killed non-existing/unreadable file buffer: %s" filename))))))
+  (message "Finished reverting buffers containing unmodified files."))
 
 
 

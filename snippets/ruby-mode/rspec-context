@@ -1,0 +1,6 @@
+# key: con
+# name: rspec-context
+# --
+$>context ${1:context_description} do
+$>$>$0
+$>end

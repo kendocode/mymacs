@@ -28,34 +28,36 @@
 
 
 ;; general
-(add-to-list 'auto-mode-alist '("\\.org.txt" . org-mode)) ;; include for orgzly
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))) ;; pretty bullets
 (setq org-yank-adjusted-subtrees t) ;; yank the whole tree with its structure & adjust target
 (setq org-footnote-auto-adjust t) ;; resort and renumber footnotes on new fn insertion
 
+;; WIP
 ;; Current gtd setup based on https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
+;; also slowly taking in http://doc.norang.ca/org-mode.html#OrgFiles
 
 ;; agenda
-(setq org-agenda-files (quote ("~/Dropbox/orgzly")))
-(setq org-agenda-file-regexp "\.org\.?")
+(setq org-agenda-files '("~/sync-org/inbox.org"
+                         "~/sync-org/projects.org"
+                         "~/sync-org/tickler.org"))
+
 
 ;;; captures
 (global-set-key "\C-cc" 'org-capture)
-(setq org-capture-templates '(("t" "Todo" entry
-                               (file+headline "~Dropbox/orgzly/inbox.org.txt" "Todo")x
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+                               (file+headline "~/sync-org/inbox.org" "Todo")
                                "* TODO %i%?")
                               ("T" "Tickler" entry
-                               (file+headline "~/Dropbox/orgzly/tickler.org.txt" "Tickler")
+                               (file+headline "~/sync-org/tickler.org" "Tickler")
                                "* %i%? \n %U")
                               ("j" "Journal" entry
-                               (file+olp+datetree "~/data/documents/journal.org")
-                               "* %?\Entered on %U\n %i\n %a")))
+                               (file+olp+datetree "~/sync-org/journal.org")
+                               "* %?\nEntered on %U\n %i\n %a")))
 
-;; refile targets
-;; (setq org-refile-targets '(("~/Dropbox/orgzly/projects.org.txt" :maxlevel . 2)
-;;                            ("~/data/documents/someday.org" :level . 1)
-;;                            ("~/Dropbox/orgzly/tickler.org.txt" :level . 1)))
-(setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+;; refiling
+(setq org-refile-targets '(("~/sync-org/projects.org" :maxlevel . 3)
+                           ("~/sync-org/someday.org" :level . 1)
+                           ("~/sync-org/tickler.org" :level . 2)))
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
@@ -65,6 +67,4 @@
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 ;; archive setup
-(setq org-archive-location "~/data/documents/archive.org::* From %s")
-
-;;  LocalWords:  orgzly
+(setq org-archive-location "~/sync-org/archive.org::* From %s")

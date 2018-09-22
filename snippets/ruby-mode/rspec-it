@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: rspec-it
+# key: it
+# contributor: kendocode
+# --
+$>it ${1:test_behavior} do
+$>$> expect(${2:test}).to ${3:eq}(${0:result})
+$>end
