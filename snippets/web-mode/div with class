@@ -1,0 +1,6 @@
+# key: div
+# name: div with class
+# --
+<div ${1:class="$2"}>
+  $0
+</div>

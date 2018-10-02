@@ -56,6 +56,9 @@
 (add-hook 'ruby-mode-hook 'yafolding-mode)
 (global-set-key (kbd "M-RET") 'yafolding-toggle-element)
 
+;; make adjustments so pry plays well with projectile-rails debugging
+;; also necessary to modify pryrc to disable paging and turn off indent correction
+(add-hook 'after-init-hook 'inf-ruby-switch-setup) ; this allows use of binding.pry
 
 
 ;; do code folding with hide-show
@@ -71,6 +74,3 @@
 ;; (global-set-key (kbd "C-c h") 'hs-hide-block-at-point)
 ;; (global-set-key (kbd "C-c s") 'hs-show-block-at-point)
 
-;; make adjustments so pry plays well with projectile-rails debugging
-;; was also necessary to modify pryrc to disable paging and turn off indent correction
-(add-hook 'after-init-hook 'inf-ruby-switch-setup) ; this allows use of binding.pry
