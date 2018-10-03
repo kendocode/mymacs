@@ -26,6 +26,9 @@
 ;;; *** My Config ***
 ;;; Code:
 
+;; set ctags to auto update
+(add-hook 'ruby-mode-hook  'turn-on-ctags-auto-update-mode)
+
 ;; I like Robe for jumping to code features
 (add-hook 'ruby-mode-hook 'robe-mode)
 ;; use company as code-completion backend for Robe
