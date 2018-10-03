@@ -57,3 +57,25 @@ Decided I can live with that for now.
    - ~syncthing~ launched the web gui
 ** On Laptop
    - 
+* Providing own configs in Prelude
+** Write config in own file using package format
+*** Sections
+    - begin with ;;; Commentary:
+    - then ;;; Code:
+    - next to last line =(provide 'filename-without-el-extension)=
+    - last line ;;; filename.el ends here
+    - this keeps flycheck happy
+*** Mode Hooks
+**** Put hooks for mode-specific conf inside the conf file
+***** Ruby-Rails Example
+      - I put mode hooks for packages inside ruby-rails.conf.el
+        - robe-mode, set up company, ruby-test-mode, yafolding, etc.
+      - don't forget =(provide 'filename-no-extension)= so it's registered as a function
+**** Put hooks to provide the mode conf file inside emacs.conf.el
+***** Ruby-Rails Example
+      - =(add-hook 'ruby-mode-hook (lambda () (require 'ruby-rails.conf)))=
+      - Not sure if the lambda is required, but first try just using just require didn't work.
+But I changed a lot of things after that might also have been the problem, and not enough time right
+now to sort it out. I think it is because I'm providing the files, which should register as functions.
+** TODO Learn about use-package, supposed to be made for this kind of style
+

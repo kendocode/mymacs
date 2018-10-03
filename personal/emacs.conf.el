@@ -1,6 +1,9 @@
-;; add asdf to path until figure out how to make emacs pick up full env
+;;; Commentary:
+;; add asdf to path until figure out how to make Emacs pick up full env
 ;;(setenv "PATH" (concat (getenv"PATH") ":/home/ken/.asdf/bin:/home/ken/.asdf/shims"))
-;; solution = start emacs server from shell after logged in, not as service
+;; solution = start Emacs server from shell after logged in, not as service
+
+;;; Code:
 
 ;; general settings and config
 (setq select-enable-clipboard t)
@@ -49,16 +52,15 @@
 (add-hook 'term-mode-hook (lambda()
                             (yas-minor-mode -1)))
 
-;;web-mode
-(defun personal-web-mode-hooks ()
-  "My hooks for Web mode."
-  (setq web-mode-markup-indent-offset 2))
-(add-hook 'web-mode-hook 'personal-web-mode-hooks)
+;; set up my mode configurations
+(lambda () (require '2-yas.conf))
+(add-hook 'ruby-mode-hook (lambda () (require 'ruby-rails.conf)))
+(add-hook 'js2-mode-hook (lambda () (require 'js.conf)))
+(add-hook 'web-mode-hook (lambda () (require '2-web-mode.conf)))
 
-;; yasnippets
-(yas-global-mode 1)
-(setq yas-buffer-local-condition 'always) ;; allow expansion in strings and comments
-(define-key yas-minor-mode (kbd "C-<tab>") nil)
+;; my functions
+(lambda () (require '2-ross-functions))
+(lambda() (require '2-my-functions))
 
 ;; regex builder -- set to string not read
 (setq reb-re-syntax 'string)
@@ -68,78 +70,5 @@
 (setq-default save-place t)
 (require 'saveplace)
 
-;;;;;;;;;;;;;;;; My functions ;;;;;;;;;;;;;;;
-(defun wrap-region ()
-  (interactive)
-  (if (region-active-p)
-      (insert-pair 1 ?{ ?})
-    (insert "{}")
-    (backward-char)))
-
-;;; from https://emacs.stackexchange.com/questions/24459/revert-all-open-buffers-and-ignore-errors
-(defun revert-all-file-buffers ()
-  "Refresh all open file buffers without confirmation.
-Buffers in modified (not yet saved) state in emacs will not be reverted. They
-will be reverted though if they were modified outside emacs.
-Buffers visiting files which do not exist any more or are no longer readable
-will be killed."
-  (interactive)
-  (dolist (buf (buffer-list))
-    (let ((filename (buffer-file-name buf)))
-      ;; Revert only buffers containing files, which are not modified;
-      ;; do not try to revert non-file buffers like *Messages*.
-      (when (and filename
-                 (not (buffer-modified-p buf)))
-        (if (file-readable-p filename)
-            ;; If the file exists and is readable, revert the buffer.
-            (with-current-buffer buf
-              (revert-buffer :ignore-auto :noconfirm :preserve-modes))
-          ;; Otherwise, kill the buffer.
-          (let (kill-buffer-query-functions) ; No query done when killing buffer
-            (kill-buffer buf)
-            (message "Killed non-existing/unreadable file buffer: %s" filename))))))
-  (message "Finished reverting buffers containing unmodified files."))
-
-
-
-;;;;;;;;;;;;;;;;;;; Useful Functions With Thanks to Ross Andrews ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defun zorch-line ()
-  "Kill the line the point is on, from anywhere on that line"
-  (interactive)
-  (save-excursion
-    (let ((start (line-beginning-position))
-	  (end (if (= (line-end-position) (point-max))
-		   (line-end-position)
-		 (+ 1 (line-end-position)))))
-      (kill-new (buffer-substring start end))
-      (delete-region start end))
-    ))
-(defun copy-whole-buffer ()
-  "Add a new entry to the kill ring containing the entire buffer"
-  (interactive)
-  (kill-new (buffer-substring (point-min) (point-max)))
-  (message "Buffer %s copied to kill ring" (buffer-name)))
-
-(defun roll-line-down ()
-  "Move current line downward once."
-  (interactive)
-  (let (col (current-column))
-    (forward-line)
-    (transpose-lines 1)
-    (forward-line -1)
-    (forward-char col)))
-
-(defun roll-line-up ()
-  "Move current line upward once."
-  (interactive)
-  (let ((col (current-column)))
-    (transpose-lines 1)
-    (forward-line -2)
-    (forward-char col)))
-
-(defun kill-all-buffers ()
-  (interactive)
-  (mapcar (lambda (b) (kill-buffer b)) (buffer-list))
-  (delete-other-windows))
-
-;;;;;;;;;;;;;;; end of Rossians ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(provide 'emacs.conf)
+;;; emacs.conf.el ends here
