@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: rspec-describe
-# key: des
-# contributor: kendocode
-# --
-describe ${1:class} do
-$>$0
-end

@@ -4,6 +4,7 @@
 ;; solution = start Emacs server from shell after logged in, not as service
 
 ;;; Code:
+(setq prelude-theme 'dracula-theme)
 
 ;; general settings and config
 (setq select-enable-clipboard t)
@@ -57,6 +58,7 @@
 (add-hook 'ruby-mode-hook (lambda () (require 'ruby-rails.conf)))
 (add-hook 'js2-mode-hook (lambda () (require 'js.conf)))
 (add-hook 'web-mode-hook (lambda () (require '2-web-mode.conf)))
+
 
 ;; my functions
 (lambda () (require '2-ross-functions))
