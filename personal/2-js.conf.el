@@ -30,42 +30,10 @@
 
 ;;; Code:
 
-;; tide mode
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  (company-mode +1))
+;; Look at Petton's Indium mode for REPL, step debugging, etc. -- any advantage over browser dev tools?
 
 
-;; standard js setup
-(add-hook 'js2-mode-hook (lambda ()
-                           (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
-                           (add-hook 'js2-mode-hook #'js2-refactor-mode)
-                           (add-hook 'js2-mode-hook #'setup-tide-mode)
-                           (flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append)
-                           (js2r-add-keybindings-with-prefix "C-c C-r")
-                           (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
-                           ;;(define-key js-mode-map (kbd "M-.") nil) ;;js2 conflicts with xref binds
-                           (setq js2-basic-offset 2)
-                           (setq js2-strict-missing-semi-warning nil))) ;; ES6 not as picky about semis
-
-;; rjsx setup for react
-;; rjsx should automatically launch for jsx extensions anywhere
-(add-to-list 'auto-mode-alist '("components\/.*\.js\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("containers\/.*\.js\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("Components\/.*\.js\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("Containers\/.*\.js\'" . rjsx-mode))
-
-(add-hook 'rjsx-mode-hook
-          (lambda ()
-            (add-hook 'rjsx-mode-hook #'setup-tide-mode)
-            (flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
-            (setq indent-tabs-mode nil) ;; use spaces, duh
-            (setq js-indent-level 2))) ;; default is 4 -- adjust per team styles
+;; tide mode config
 
 
 
