@@ -92,7 +92,7 @@
   (setq tide-format-options
         '(:insertSpaceAfterCommaDelimiter t
           :insertSpaceAfterFunctionKeywordsForAnonymousFunctions t
-          :insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis t
+          ;; :insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis t
           :insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets t
           :insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces t
           :insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces t

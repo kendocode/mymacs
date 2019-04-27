@@ -17,7 +17,6 @@
   (add-to-list 'company-backends 'company-restclient)
   (add-hook 'restclient-mode-hook 'my-restclient-mode-hook))
 
-
 (provide 'restclient)
 
 ;;; restclient.conf.el ends here
