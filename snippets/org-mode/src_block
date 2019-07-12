@@ -1,0 +1,6 @@
+# key: src
+# name: src_block
+# --
+#+BEGIN_SRC ${1:ruby}
+    $> $0
+#+END_SRC
