@@ -1,5 +1,5 @@
 # key: div
-# name: div with class
+# name: div_with_class
 # --
 <div ${1:class="$2"}>
   $0

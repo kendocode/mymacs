@@ -78,6 +78,7 @@
 (add-hook 'web-mode-hook (lambda () (require '2-web-mode.conf)))
 
 
+
 ;;(add-hook 'js2-mode-hook (lambda () (require '2-js.conf)))
 
 ;; js here for testing

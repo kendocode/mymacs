@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: stimulus_boilerplate
+# key: stim
+# --
+
+// https://stimulusjs.org/handbook
+// https://gist.github.com/mrmartineau/a4b7dfc22dc8312f521b42bb3c9a7c1e
+
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+static targets = [ ]
+
+$> $0
+
+}
