@@ -4,11 +4,24 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(browse-url-browser-function (quote browse-url-chrome))
+ '(ediff-diff-options "-w")
+ '(ediff-split-window-function (quote split-window-horizontally))
+ '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(js2-strict-missing-semi-warning nil)
  '(markdown-gfm-additional-languages (quote ("yaml" "shell")))
+ '(org-babel-load-languages
+   (quote
+    ((shell . t)
+     (emacs-lisp . t)
+     (ruby . t)
+     (js . t)
+     (sql . t)
+     (dot)
+     (makefile)
+     (plantuml))))
  '(package-selected-packages
    (quote
-    (sass-mode flymd skewer-mode elmacro plantuml-mode scala-mode php-mode exec-path-from-shell slim-mode haml-mode dracula-theme docker-compose-mode docker dockerfile-mode company-restclient restclient-helm restclient rjsx-mode typescript-mode tide ctags-update rspec-mode nov yafolding swiper-helm psc-ide ruby-test-mode seeing-is-believing paradox counsel swiper ivy avy helm projectile org-plus-contrib change-inner org-bullets writegood-mode go-mode zop-to-char zenburn-theme yasnippet-snippets yari yaml-mode xref-js2 which-key web-mode volatile-highlights undo-tree solarized-theme smex smartrep smartparens scss-mode robe rainbow-mode rainbow-delimiters projectile-rails operate-on-number neotree multi-term move-text markdown-mode magit key-chord json-mode js2-refactor imenu-anywhere ido-completing-read+ hl-todo helm-projectile helm-descbinds helm-ag guru-mode gitignore-mode gitconfig-mode git-timemachine gist geiser flycheck flx-ido expand-region elpa-mirror elisp-slime-nav editorconfig easy-kill discover-my-major diminish diff-hl csv-mode crux company coffee-mode browse-kill-ring beacon anzu ag ace-window)))
+    (ob-restclient google-translate feature-mode sass-mode flymd skewer-mode elmacro plantuml-mode scala-mode php-mode exec-path-from-shell slim-mode haml-mode dracula-theme docker-compose-mode docker dockerfile-mode company-restclient restclient-helm restclient rjsx-mode typescript-mode tide ctags-update rspec-mode nov yafolding swiper-helm psc-ide ruby-test-mode seeing-is-believing paradox counsel swiper ivy avy helm projectile org-plus-contrib change-inner org-bullets writegood-mode go-mode zop-to-char zenburn-theme yasnippet-snippets yari yaml-mode xref-js2 which-key web-mode volatile-highlights undo-tree solarized-theme smex smartrep smartparens scss-mode robe rainbow-mode rainbow-delimiters projectile-rails operate-on-number neotree multi-term move-text markdown-mode magit key-chord json-mode js2-refactor imenu-anywhere ido-completing-read+ hl-todo helm-projectile helm-descbinds helm-ag guru-mode gitignore-mode gitconfig-mode git-timemachine gist geiser flycheck flx-ido expand-region elpa-mirror elisp-slime-nav editorconfig easy-kill discover-my-major diminish diff-hl csv-mode crux company coffee-mode browse-kill-ring beacon anzu ag ace-window)))
  '(paradox-github-token t)
  '(plantuml-jar-path "/home/ken/bin/plantuml.jar")
  '(require-final-newline (quote visit-save)))

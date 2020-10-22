@@ -31,6 +31,16 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))) ;; pretty bullets
 (setq org-yank-adjusted-subtrees t) ;; yank the whole tree with its structure & adjust target
 (setq org-footnote-auto-adjust t) ;; resort and renumber footnotes on new fn insertion
+;; add org-babel languages to enable code execution in org mode
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (restclient . t)
+   (makefile . t)
+   (plantuml . t)
+   (ruby . t)
+   (sed . t)
+   (shell . t)))
 
 ;; WIP
 ;; Current gtd setup based on https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
