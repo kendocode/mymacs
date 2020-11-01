@@ -1,9 +1,7 @@
 * General Notes
   The bulk of my emacs config currently comes from Prelude; I keep the repo as a submodule in lib/prelude.
   Then I symlink in what I use from Prelude along with my personal config in home/emacs to ~/.emacs.d
-
 ** Clean Install Procedures
-
   After starting emacs for the first time:
     1. find ken-packages, M-x eval-buffer #it'll do a bunch of installing
     2. find init.el (prelude's), M-x eval-buffer #installs theme and calls my persona config.
@@ -14,7 +12,6 @@
   version of a package.
 
 * Package Notes
-
 ** elpa-mirror (my_elpa repo)
   5 JAN 17 -- installed https://github.com/redguardtoo/elpa-mirror to keep a backup mirror of all
 installed packages for reversion if (when) updates break something.
