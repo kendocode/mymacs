@@ -7,6 +7,7 @@
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(global-linum-mode nil)
  '(js2-strict-missing-semi-warning nil)
  '(markdown-gfm-additional-languages (quote ("yaml" "shell")))
  '(org-babel-load-languages
