@@ -77,8 +77,6 @@
 (add-hook 'ruby-mode-hook (lambda () (require '2-ruby-rails.conf)))
 (add-hook 'web-mode-hook (lambda () (require '2-web-mode.conf)))
 
-
-
 ;;(add-hook 'js2-mode-hook (lambda () (require '2-js.conf)))
 
 ;; js here for testing
@@ -127,8 +125,6 @@
             (flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
             (setq indent-tabs-mode nil) ;; use spaces, duh
             (setq js-indent-level 2))) ;; default is 4 -- adjust per team styles
-
-
 
 ;; my functions
 (lambda () (require '2-ross-functions))
