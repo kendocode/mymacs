@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: frozen_string_literal
+# key: fsl
+# contributor: kendocode
+# --
+# frozen_string_literal: true
+$0
