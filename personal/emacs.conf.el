@@ -23,7 +23,6 @@
 (exec-path-from-shell-initialize)
 
 
-
 ;; global keys
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key [f9] 'view-buffer-other-frame)

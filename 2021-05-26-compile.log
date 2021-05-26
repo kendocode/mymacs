@@ -1,0 +1,246 @@
+Leaving directory ‘/home/ken/.emacs.d/elpa/helm-projectile-20201217.908’
+
+Compiling file /home/ken/.emacs.d/elpa/helm-projectile-20201217.908/helm-projectile.el at Wed May 26 03:45:20 2021
+Entering directory ‘/home/ken/.emacs.d/elpa/helm-projectile-20201217.908/’
+
+In helm-projectile-file-persistent-action:
+helm-projectile.el:307:36:Warning: ‘helm-attr’ is an obsolete function (as of
+    3.7.0); use ‘helm-get-attr’ instead.
+helm-projectile.el:311:18:Warning: ‘helm-attr’ is an obsolete function (as of
+    3.7.0); use ‘helm-get-attr’ instead.
+helm-projectile.el:310:14:Warning: ‘helm-attrset’ is an obsolete function (as
+    of 3.7.0); use ‘helm-set-attr’ instead.
+helm-projectile.el:313:6:Warning: ‘helm-attrset’ is an obsolete function (as
+    of 3.7.0); use ‘helm-set-attr’ instead.
+helm-projectile.el:313:6:Warning: ‘helm-attrset’ is an obsolete function (as
+    of 3.7.0); use ‘helm-set-attr’ instead.
+
+Compiling no file at Wed May 26 03:45:21 2021
+
+In helm-ag--init:
+helm-ag.el:314:6:Warning: ‘helm-attrset’ is an obsolete function (as of
+    3.7.0); use ‘helm-set-attr’ instead.
+helm-ag.el:318:49:Warning: ‘helm-attr’ is an obsolete function (as of 3.7.0);
+    use ‘helm-get-attr’ instead.
+
+In helm-ag--search-this-file-p:
+helm-ag.el:389:8:Warning: ‘helm-attr’ is an obsolete function (as of 3.7.0);
+    use ‘helm-get-attr’ instead.
+
+In helm-ag--candidate-transformer:
+helm-ag.el:481:12:Warning: ‘helm-attr’ is an obsolete function (as of 3.7.0);
+    use ‘helm-get-attr’ instead.
+
+In helm-ag--up-one-level:
+helm-ag.el:920:15:Warning: ‘helm-attrset’ is an obsolete function (as of
+    3.7.0); use ‘helm-set-attr’ instead.
+
+In helm-ag-this-file:
+helm-ag.el:934:6:Warning: ‘helm-attrset’ is an obsolete function (as of
+    3.7.0); use ‘helm-set-attr’ instead.
+helm-ag.el:935:19:Warning: ‘helm-attrset’ is an obsolete function (as of
+    3.7.0); use ‘helm-set-attr’ instead.
+
+In helm-ag:
+helm-ag.el:953:8:Warning: ‘helm-attrset’ is an obsolete function (as of
+    3.7.0); use ‘helm-set-attr’ instead.
+helm-ag.el:953:43:Warning: ‘helm-attrset’ is an obsolete function (as of
+    3.7.0); use ‘helm-set-attr’ instead.
+
+In helm-do-ag--helm:
+helm-ag.el:1319:6:Warning: ‘helm-attrset’ is an obsolete function (as of
+    3.7.0); use ‘helm-set-attr’ instead.
+
+In projectile-rails-find-log:
+projectile-rails.el:780:21:Warning: assignment to free variable
+    ‘auto-revert-verbose’
+projectile-rails.el:1691:51:Error: Wrong number of arguments: (2 . 2), 4
+
+In multi-term-dedicated-close:
+multi-term.el:520:18:Warning: reference to free variable
+    ‘ecb-activated-window-configuration’
+
+In multi-term-switch-buffer:
+multi-term.el:639:46:Warning: reference to free variable ‘path’
+multi-term.el:640:62:Warning: reference to free variable ‘path-method’
+multi-term.el:640:74:Warning: reference to free variable ‘tramp-methods’
+multi-term.el:641:74:Warning: reference to free variable ‘path-user’
+multi-term.el:641:90:Warning: reference to free variable ‘path-host’
+multi-term.el:642:46:Warning: reference to free variable ‘path-localname’
+
+In end of data:
+multi-term.el:885:1:Warning: the following functions are not known to be
+    defined: ecb-deactivate, ecb-activate, tramp-tramp-file-p,
+    with-parsed-tramp-file-name
+
+In toplevel form:
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘cyan-1fg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘cyan-1bg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-2fg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-2bg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-1fg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-1bg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘magenta-1fg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘magenta-1bg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-2fg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-2bg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-1fg’
+solarized-dark-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-1bg’
+
+In toplevel form:
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘cyan-1fg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘cyan-1bg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘violet-2fg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘violet-2bg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘violet-1fg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘violet-1bg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘magenta-1fg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘magenta-1bg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘orange-2fg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘orange-2bg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘orange-1fg’
+solarized-dark-theme.el:30:1:Warning: Unused lexical variable ‘orange-1bg’
+
+In toplevel form:
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘cyan-1fg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘cyan-1bg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-2fg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-2bg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-1fg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-1bg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘magenta-1fg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘magenta-1bg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-2fg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-2bg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-1fg’
+solarized-gruvbox-dark-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-1bg’
+
+In toplevel form:
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘cyan-1fg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘cyan-1bg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-2fg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-2bg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-1fg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-1bg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘magenta-1fg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘magenta-1bg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-2fg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-2bg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-1fg’
+solarized-gruvbox-light-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-1bg’
+
+In toplevel form:
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘cyan-1fg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘cyan-1bg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-2fg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-2bg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-1fg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘violet-1bg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘magenta-1fg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘magenta-1bg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-2fg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-2bg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-1fg’
+solarized-light-high-contrast-theme.el:31:1:Warning: Unused lexical variable
+    ‘orange-1bg’
+
+In toplevel form:
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘cyan-1fg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘cyan-1bg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘violet-2fg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘violet-2bg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘violet-1fg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘violet-1bg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘magenta-1fg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘magenta-1bg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘orange-2fg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘orange-2bg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘orange-1fg’
+solarized-light-theme.el:30:1:Warning: Unused lexical variable ‘orange-1bg’
+
+In toplevel form:
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘violet-2fg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘orange-2fg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘violet-2bg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘orange-2bg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘cyan-1fg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘violet-1fg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘magenta-1fg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘orange-1fg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘violet-1bg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘cyan-1bg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘magenta-1bg’
+solarized-wombat-dark-theme.el:30:1:Warning: Unused lexical variable
+    ‘orange-1bg’
+
+In toplevel form:
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘cyan-1fg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘cyan-1bg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘violet-2fg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘violet-2bg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘violet-1fg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘violet-1bg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘magenta-1fg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘magenta-1bg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘orange-2fg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘orange-2bg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘orange-1fg’
+solarized-zenburn-theme.el:31:1:Warning: Unused lexical variable ‘orange-1bg’

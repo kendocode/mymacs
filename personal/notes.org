@@ -1,33 +1,44 @@
-Prelude File Loading order: personal/preload/ (in alpha order) -> core/ -> prelude-modules.el -> personal/(alpha order)
+Prelude File Loading order:
+1.  personal/preload/ (in alpha order)
+2.  core/
+3.  prelude-modules.el
+4.  personal/(alpha order)
 
 In personal/preload/ loading phase, no access to prelude packages.
 
 * Installing Org
-
 ** Use Latest version from org's archive
    made load-org.el file in personal/preload to add org's archive to archive list. Evaled buffer,
 then was able to install org-plus-contrib via M-x package install.
-
 ** Add my config on top of Prelude's
 - Copied the basic prelude org config into mine so I remember what's used. Now I can require org
 from prelude-modules.el, and everything should work.  [[https://orgmode.org/elpa.html][Org site]] suggests initializing packages early
 in emacs init and only installing before any org files are visited etc, but reading prelude package
 loading code it looks to be acceptable as is.
 - Also added ~prelude-pinned-packages.el~ file with org-plus-contrib from org's elpa archive
-
 * Getting later version of emacs
-- installed emacs lisp ppa
-- installed emacs-snapshot
-- set alias ~emacs=emacs-snapshot~
-- removed emacs from apt
-- changed omzsh alias and emacs plugins to use emacs-snapshot
-- put ~emacs-snapshot --daemon~ in gnome's auto-start
-- found that several org-contrib files were shadowing the built-in org. Since it was only about 6 minor
-releases behing snapshot, considered just using built-in, but decided I wanted the contrib stuff too
-- Removed ~/usr/share/emacs/27?/org~
-- Killed daemon, restarted, only shadowing is ispell dictionaries in site-lisp vs lisp/site-lisp.
-Decided I can live with that for now.
-- Fired up daemon, all good.
+** ubuntu elisp ppa -- not preferred
+*** installed emacs lisp ppa
+*** installed emacs-snapshot
+*** set alias ~emacs=emacs-snapshot~
+*** removed emacs from apt
+*** changed omzsh alias and emacs plugins to use emacs-snapshot
+*** put ~emacs-snapshot --daemon~ in gnome's auto-start
+*** found that several org-contrib files were shadowing the built-in org. Since it was only about 6 minor
+*** releases behing snapshot, considered just using built-in, but decided I wanted the contrib stuff too
+*** Removed ~/usr/share/emacs/27?/org~
+*** Killed daemon, restarted, only shadowing is ispell dictionaries in site-lisp vs lisp/site-lisp.
+*** Decided I can live with that for now.
+*** Fired up daemon, all good.
+** kkelly ppa -- currently using
+*** [[http://iboyko.com/articles/updating-emacs-from-24-to-26-27-on-ubuntu/][basically followed this procedure]]
+*** had some issues with broken pipe trying to install 27 over 26
+- purged 26
+- renamed my emacs.d for safekeeping
+- removed all emacs-26 from /etc/bin/ and /etc/alternatives
+- verified that symlinks to emacs and emacsclient point to emacs27
+** snap -- didn't try, seems like it'd be slow
+** compile from source -- ultimate solution but need to script it
 * Issues
 ** Invalid target when trying to refile from inbox.org.txt
 *** Maybe File permissions?
@@ -48,15 +59,13 @@ Decided I can live with that for now.
     - This brings up the Helm completion menu for all existing targets meeting your set criteria
     - If you're refiling to existing node, type until you match it and issue ~RET~
     - If you want to _create_ a new heading, type the path and add ~/New Heading Name~ to the end
-      - Confirm that you want to create that heading 
-
-
+      - Confirm that you want to create that heading
 * Syncthing
-** Using Termux for phone 
+** Using Termux for phone
    - ~pkg install -y syncthing~ installed the package
    - ~syncthing~ launched the web gui
 ** On Laptop
-   - 
+   -
 * Providing own configs in Prelude
 ** Write config in own file using package format
 *** Sections
@@ -78,4 +87,3 @@ Decided I can live with that for now.
 But I changed a lot of things after that might also have been the problem, and not enough time right
 now to sort it out. I think it is because I'm providing the files, which should register as functions.
 ** TODO Learn about use-package, supposed to be made for this kind of style
-

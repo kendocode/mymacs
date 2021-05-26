@@ -1,0 +1,17 @@
+
+;; ----- smex-history -----
+(
+ elpamr-create-mirror-for-installed
+ describe-variable
+ ag
+ cd
+ 5x5
+ arp
+ dbx
+)
+
+;; ----- smex-data -----
+(
+ (elpamr-create-mirror-for-installed . 2)
+ (describe-variable . 1)
+)

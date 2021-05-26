@@ -3,9 +3,9 @@
   Then I symlink in what I use from Prelude along with my personal config in home/emacs to ~/.emacs.d
 ** Clean Install Procedures
   After starting emacs for the first time:
-    1. find ken-packages, M-x eval-buffer #it'll do a bunch of installing
-    2. find init.el (prelude's), M-x eval-buffer #installs theme and calls my persona config.
-    TODO: Maybe script that?
+    1. C-c C-b Prelude's init.el # should install theme and calls my persona config.
+    2. C-c C-b to eval-buffer personal/emacs.conf.el
+    TODO: figure out how to ensure necessary things get eval'd automatically, every time
 
   Don't symlink lib/my_elpa -- emacs will create elpa in .emacs.d anyhow if it doesn't exist.
   The git submodule lib/my_elpa is a backup repo I keep at github in case something breaks and I need a known good
