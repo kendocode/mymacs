@@ -1,17 +1,18 @@
 
 ;; ----- smex-history -----
 (
+ package-install
  elpamr-create-mirror-for-installed
  describe-variable
  ag
  cd
  5x5
  arp
- dbx
 )
 
 ;; ----- smex-data -----
 (
  (elpamr-create-mirror-for-installed . 2)
  (describe-variable . 1)
+ (package-install . 1)
 )
