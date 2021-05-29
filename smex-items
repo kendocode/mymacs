@@ -1,18 +1,43 @@
 
 ;; ----- smex-history -----
 (
- package-install
- elpamr-create-mirror-for-installed
- describe-variable
- ag
- cd
- 5x5
- arp
+ eval-region
+ helm-M-x
+ search-forward
+ eww-open-in-new-buffer
+ undo-tree-visualize
+ browse-kill-ring
+ dired-x-find-file
 )
 
 ;; ----- smex-data -----
 (
  (elpamr-create-mirror-for-installed . 2)
- (describe-variable . 1)
- (package-install . 1)
+ (describe-variable . 4)
+ (package-install . 2)
+ (byte-recompile-directory . 3)
+ (key-chord-mode . 1)
+ (replace-regexp . 3)
+ (repeat . 1)
+ (browse-kill-ring . 2)
+ (helm-M-x . 2)
+ (org-pandoc-export-to-gfm . 1)
+ (markdown-preview . 1)
+ (org-pandoc-export-as-json . 1)
+ (org-pandoc-export-to-docx . 1)
+ (eval-expression . 1)
+ (eval-buffer . 5)
+ (electric-pair-mode . 1)
+ (eval-last-sexp . 1)
+ (command-history . 1)
+ (eval-print-last-sexp . 2)
+ (org-move-item-down . 1)
+ (org-move-subtree-down . 1)
+ (eval-region . 7)
+ (eww . 1)
+ (eww-open-in-new-buffer . 4)
+ (prelude-list-foreign-packages . 1)
+ (dired-x-find-file . 1)
+ (undo-tree-visualize . 1)
+ (search-forward . 1)
 )

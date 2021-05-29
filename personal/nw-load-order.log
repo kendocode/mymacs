@@ -1,0 +1,56 @@
+[Prelude] Prelude is powering up... Be patient, Master ken!
+[Prelude] Loading personal configuration files in /home/ken/.emacs.d/personal/preload...
+Loading /home/ken/.emacs.d/personal/preload/load-org.el (source)...done
+Loading /home/ken/.emacs.d/personal/preload/pre-prelude-config.el (source)...done
+Loading /home/ken/.emacs.d/personal/preload/theme.el (source)...done
+[Prelude] Loading Prelude’s core modules...
+Loading /home/ken/.emacs.d/prelude-pinned-packages.el (source)...done
+Loading /home/ken/.emacs.d/savefile/recentf...done
+Warning: exec-path-from-shell execution took 1281ms. See the README for tips on reducing this.
+[Prelude] Loading Prelude’s additional modules...
+Loading /home/ken/.emacs.d/personal/prelude-modules.el (source)...
+Turn on helm-projectile key bindings
+Warning: exec-path-from-shell execution took 1274ms. See the README for tips on reducing this.
+Loading /home/ken/.emacs.d/personal/prelude-modules.el (source)...done
+[Prelude] Loading personal configuration files in /home/ken/.emacs.d/personal...
+Loading /home/ken/.emacs.d/personal/1-org-conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/1-prelude-require-packages.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-ctags-update.conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-ediff-config.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-js.conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-my-functions.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-prelude.conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-restclient.conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-ross-functions.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-ruby-rails.conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-web-mode.conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/2-yas.conf.el (source)...
+[yas] Prepared just-in-time loading of snippets successfully.
+Loading /home/ken/.emacs.d/personal/2-yas.conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/custom.el (source)...done
+Loading /home/ken/.emacs.d/personal/emacs.conf.el (source)...
+Warning: exec-path-from-shell execution took 1246ms. See the README for tips on reducing this.
+Loading /home/ken/.emacs.d/personal/emacs.conf.el (source)...done
+Loading /home/ken/.emacs.d/personal/flycheck-standardrb.el (source)...done
+[Prelude] Prelude is ready to do thy bidding, Master ken!
+Starting new Ispell process aspell with default dictionary...done
+For information about GNU Emacs and the GNU system, type C-h C-a.
+Prelude tip: Press <C-c p s g> to run grep on a project.
+previous-line: Beginning of buffer
+reference to free variable ‘I’
+reference to free variable ‘wI’
+next-line: End of buffer
+reference to free variable ‘wI’
+reference to free variable ‘I’
+reference to free variable ‘wI’
+reference to free variable ‘I’
+next-line: End of buffer [2 times]
+reference to free variable ‘scratch’
+reference to free variable ‘underlining’
+reference to free variable ‘scratch’
+helm: Error: Trying to run helm within a running helm session
+reference to free variable ‘I’
+reference to free variable ‘exI’
+reference to free variable ‘I’
+Mark set
+Quit
